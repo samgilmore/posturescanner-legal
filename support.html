@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Posture Scanner</title>
+    <title>Privacy Policy - Posture Scanner</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0A0E1A; color: #F5F5F5; }
@@ -16,40 +16,38 @@
     <div class="container mx-auto bg-gray-900 p-6 sm:p-10 rounded-xl shadow-2xl">
         
         <header class="mb-8 border-b border-gray-700 pb-4">
-            <h1 class="3xl font-bold text-sky-400">Posture Scanner Support</h1>
-            <p class="text-sm text-gray-400 mt-1">We're here to help you with technical issues and billing inquiries.</p>
+            <h1 class="text-3xl font-bold text-sky-400">Privacy Policy</h1>
+            <p class="text-sm text-gray-400 mt-1">Last Updated: November 2025</p>
         </header>
 
         <section class="mb-6">
-            <h2 class="2xl font-semibold mb-3 text-sky-300">Contact Information</h2>
-            <p class="text-gray-300">For all support, technical, or account questions, please contact us directly via email. We aim to respond within 48 hours.</p>
-            <div class="mt-4 p-4 bg-gray-800 rounded-lg">
-                <p class="text-lg font-mono text-cyan-400">friendcleansedev@gmail.com</p>
-            </div>
+            <h2 class="text-2xl font-semibold mb-3 text-sky-300">1. Data Storage and User Identity</h2>
+            <ul class="list-disc list-inside space-y-3 ml-4 text-gray-300">
+                <li><strong>Personal Data:</strong> We collect your name and email address only via <strong>Sign in with Apple</strong> for personalized greetings and internal account management.</li>
+                <li><strong>Data Storage (Privacy First):</strong> <strong>No user data, including images, pose coordinates, or analysis results, is stored on our remote servers.</strong> All personal, scan, and progress data is secured within your personal <strong>iCloud/CloudKit</strong> storage.</li>
+            </ul>
+        </section>
+        
+        <section class="mb-6">
+            <h2 class="text-2xl font-semibold mb-3 text-sky-300">2. How Scanning Data is Processed</h2>
+            <ul class="list-disc list-inside space-y-3 ml-4 text-gray-300">
+                <li><strong>Image Handling:</strong> The live video feed is processed <strong>on your device</strong> using Apple's Vision framework to detect key anatomical joint coordinates. The raw image is saved only to your local/iCloud storage.</li>
+                <li><strong>AI Processing:</strong> To generate the advanced posture analysis (scores, insights), we send a small <strong>JSON object containing only numerical coordinate data</strong> (relative X/Y positions of joints) to the OpenAI API. <strong>We never send raw images or videos to OpenAI or any third-party server.</strong></li>
+                <li><strong>Coordinate Data:</strong> This coordinate data is instantly analyzed by the AI and is <strong>not logged or stored</strong> by the external API provider for our records.</li>
+                <li><strong>Analytics Tracking:</strong> We use Firebase Analytics (a third-party tool) to track high-level product usage, specifically <strong>anonymized answers from the initial onboarding questionnaire</strong>. This data is used solely for product improvement (e.g., refining exercise recommendations). This data is <strong>not linked</strong> to your user ID, Apple ID, or any other personally identifiable information.</li>
+            </ul>
         </section>
 
         <section class="mb-6">
-            <h2 class="2xl font-semibold mb-3 text-sky-300">Frequently Asked Questions</h2>
-            <div class="space-y-4 text-gray-300">
-                <div class="border-b border-gray-700 pb-3">
-                    <h3 class="font-semibold text-white">Q: How do I cancel my subscription?</h3>
-                    <p class="text-sm mt-1">A: Subscriptions are managed directly through your Apple ID settings. Go to Settings > [Your Name] > Subscriptions and select Posture Scanner to manage or cancel your plan.</p>
-                </div>
-                <div class="border-b border-gray-700 pb-3">
-                    <h3 class="font-semibold text-white">Q: Where is my data stored?</h3>
-                    <p class="text-sm mt-1">A: All your scan data, images, and progress records are stored securely on your personal <strong>iCloud/CloudKit</strong>. We do not store this information remotely on our servers.</p>
-                </div>
-                <div class="border-b border-gray-700 pb-3">
-                    <h3 class="font-semibold text-white">Q: My scan results seem wrong. What should I do?</h3>
-                    <p class="text-sm mt-1">A: Ensure you are standing the required distance from the camera (typically 6-10 feet) and that you are wearing close-fitting clothing. Remember, our analysis provides suggestions and is not a medical diagnosis. If you are experiencing pain, please consult a medical professional.</p>
-                </div>
-            </div>
+            <h2 class="text-2xl font-semibold mb-3 text-sky-300">3. Support & Contact</h2>
+            <p class="text-gray-300">If you have any questions regarding this Privacy Policy, please contact us at:</p>
+            <p class="mt-2 text-lg font-mono text-cyan-400">friendcleansedev@gmail.com</p>
         </section>
 
         <footer class="mt-8 pt-4 border-t border-gray-700 text-center text-sm space-x-4">
-            <a href="privacy.html" class="nav-link">Privacy Policy</a>
-            <span>|</span>
             <a href="terms.html" class="nav-link">Terms of Service</a>
+            <span>|</span>
+            <a href="support.html" class="nav-link">Support Page</a>
         </footer>
     </div>
 </body>
