@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Posture Scanner</title>
+    <title>Privacy Policy - PostureScan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0A0E1A; color: #F5F5F5; }
@@ -32,9 +32,9 @@
         <section class="mb-6">
             <h2 class="text-2xl font-semibold mb-3 text-sky-300">2. How Scanning Data is Processed</h2>
             <ul class="list-disc list-inside space-y-3 ml-4 text-gray-300">
-                <li><strong>Image Handling:</strong> The live video feed is processed <strong>on your device</strong> using Apple's Vision framework to detect key anatomical joint coordinates. The raw image is saved only to your local/iCloud storage.</li>
-                <li><strong>AI Processing:</strong> To generate the advanced posture analysis (scores, insights), we send a small <strong>JSON object containing only numerical coordinate data</strong> (relative X/Y positions of joints) to the OpenAI API. <strong>We never send raw images or videos to OpenAI or any third-party server.</strong></li>
-                <li><strong>Coordinate Data:</strong> This coordinate data is instantly analyzed by the AI and is <strong>not logged or stored</strong> by the external API provider for our records.</li>
+                <li><strong>Image Storage:</strong> The images you capture for analysis are saved <strong>only</strong> to your personal and secure <strong>iCloud/CloudKit</strong> storage. We do not have access to them.</li>
+                <li><strong>AI Processing:</strong> To generate the advanced posture analysis (scores, insights), we send a <strong>base64 encoded version of your scan image</strong> to the OpenAI API for processing.</li>
+                <li><strong>API Data Privacy:</strong> According to OpenAI's API data usage policy, the image data sent for analysis is <strong>not stored</strong> on their servers or used for training their AI models. It is processed immediately to generate your analysis and then discarded.</li>
                 <li><strong>Analytics Tracking:</strong> We use Firebase Analytics (a third-party tool) to track high-level product usage, specifically <strong>anonymized answers from the initial onboarding questionnaire</strong>. This data is used solely for product improvement (e.g., refining exercise recommendations). This data is <strong>not linked</strong> to your user ID, Apple ID, or any other personally identifiable information.</li>
             </ul>
         </section>
