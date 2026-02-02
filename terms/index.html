@@ -4,50 +4,471 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - PostureScan</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="PostureScan Terms of Service - Legal terms and conditions for using our app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0A0E1A; color: #F5F5F5; }
-        .container { max-width: 800px; }
-        .nav-link { color: #0EA5E9; text-decoration: none; font-weight: 600; }
-        .nav-link:hover { color: #06B6D4; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #0A0E1A;
+            --secondary-bg: #131824;
+            --accent-start: #3B82F6;
+            --accent-end: #60A5FA;
+            --text-primary: #F5F5F5;
+            --text-secondary: #94A3B8;
+            --error-red: #EF4444;
+            --warning-orange: #F59E0B;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.8;
+            padding: 2rem 1rem;
+        }
+
+        .brand-font {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--secondary-bg);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .logo-link img {
+            width: 40px;
+            height: 40px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-end) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--accent-end);
+            margin: 2.5rem 0 1.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2rem 0 1rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        li {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        li::before {
+            content: '●';
+            position: absolute;
+            left: 0.5rem;
+            color: var(--accent-end);
+            font-size: 12px;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid var(--error-red);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .warning-box h3 {
+            color: var(--error-red);
+            margin-top: 0;
+        }
+
+        .warning-box p,
+        .warning-box li {
+            color: var(--text-primary);
+        }
+
+        .info-box {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning-orange);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .contact-box {
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid var(--accent-start);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .contact-box p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .email-link {
+            display: inline-block;
+            color: var(--accent-end);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 0.75rem 1.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .email-link:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(59, 130, 246, 0.2);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--accent-end);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-start);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
     </style>
 </head>
-<body class="p-4 sm:p-8">
-    <div class="container mx-auto bg-gray-900 p-6 sm:p-10 rounded-xl shadow-2xl">
-        
-        <header class="mb-8 border-b border-gray-700 pb-4">
-            <h1 class="3xl font-bold text-sky-400">Terms of Service</h1>
-            <p class="text-sm text-gray-400 mt-1">Last Updated: November 2025</p>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="logo-link">
+                <img src="../assets/app_icon_inner_new.png" alt="PostureScan Icon">
+                <span class="brand-font" style="font-size: 24px;">PostureScan</span>
+            </a>
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last Updated: February 2026</p>
         </header>
 
-        <section class="mb-6">
-            <h2 class="text-2xl font-semibold mb-3 text-sky-300">1. Acceptance of Terms</h2>
-            <p class="text-gray-300">By using the PostureScan mobile application (the "App"), you agree to these Terms of Service. If you do not agree, you may not use the App.</p>
+        <section>
+            <p>Welcome to PostureScan! These Terms of Service ("Terms") govern your use of the PostureScan mobile application (the "App"). By downloading, accessing, or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the App.</p>
         </section>
 
-        <section class="mb-6">
-            <h2 class="text-2xl font-semibold mb-3 text-sky-300">2. Medical Disclaimer (Crucial)</h2>
-            <ul class="list-disc list-inside space-y-3 ml-4 text-gray-300">
-                <li><strong>NOT MEDICAL ADVICE:</strong> The App, its posture scores, analysis, advanced statistics, and exercise recommendations are <strong>NOT</strong> a substitute for professional medical advice, diagnosis, or treatment.</li>
-                <li><strong>RISK OF INJURY:</strong> You acknowledge that physical activity carries inherent risks. You agree that the creators of Posture Scanner are <strong>not responsible for any injuries or adverse outcomes</strong> resulting from following the exercise suggestions provided by the App.</li>
-                <li><strong>Consult a Professional:</strong> Always seek the advice of a physician, physiotherapist, or other qualified health provider with any questions you may have regarding a medical condition.</li>
+        <div class="warning-box">
+            <h3>⚠️ CRITICAL MEDICAL DISCLAIMER</h3>
+            <p><strong>READ THIS CAREFULLY BEFORE USING THE APP</strong></p>
+            <ul>
+                <li><strong>NOT MEDICAL ADVICE:</strong> PostureScan is a wellness and fitness tool designed for self-improvement and educational purposes only. The App is NOT a medical device and does NOT provide medical advice, diagnosis, or treatment.</li>
+                <li><strong>NO SUBSTITUTE FOR PROFESSIONALS:</strong> The posture analysis, scores, measurements, advanced statistics, and exercise recommendations provided by the App are NOT a substitute for professional medical advice from a licensed physician, physiotherapist, chiropractor, or other qualified healthcare provider.</li>
+                <li><strong>CONSULT A DOCTOR:</strong> If you have any pre-existing medical conditions, injuries, chronic pain, or concerns about your physical health, you MUST consult with a qualified healthcare provider before using this App or following any exercise recommendations.</li>
+                <li><strong>RISK OF INJURY:</strong> Physical exercise and posture correction activities carry inherent risks, including but not limited to muscle strain, injury, discomfort, or exacerbation of existing conditions. You assume all risks associated with using this App and following its recommendations.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2>1. Acceptance of Terms</h2>
+            <p>By creating an account, accessing, or using PostureScan, you acknowledge that you have read, understood, and agree to be bound by these Terms, as well as our Privacy Policy. These Terms constitute a legally binding agreement between you and PostureScan (operated by Samuel Gilmore).</p>
+        </section>
+
+        <section>
+            <h2>2. Eligibility and Use</h2>
+            <ul>
+                <li><strong>Age Requirement:</strong> PostureScan is rated for users ages 9 and up. Users under 18 must have parental or guardian consent to use the App.</li>
+                <li><strong>Accurate Information:</strong> You agree to provide accurate information when using the App's features.</li>
+                <li><strong>Responsible Use:</strong> You are responsible for your use of the App and any decisions you make based on the information provided.</li>
             </ul>
         </section>
 
-        <section class="mb-6">
-            <h2 class="text-2xl font-semibold mb-3 text-sky-300">3. Subscription Model</h2>
-            <p class="text-gray-300">The App operates on a subscription model. Payment will be charged to your Apple ID Account upon purchase confirmation and will automatically renew unless canceled at least 24 hours before the end of the current period.</p>
+        <section>
+            <h2>3. License to Use the App</h2>
+            <p>Subject to your compliance with these Terms, PostureScan grants you a limited, non-exclusive, non-transferable, revocable license to download, install, and use the App for your personal, non-commercial use.</p>
+            
+            <h3>You May NOT:</h3>
+            <ul>
+                <li>Copy, modify, distribute, sell, or lease any part of the App</li>
+                <li>Reverse engineer, decompile, or attempt to extract the source code of the App</li>
+                <li>Use the App for any illegal, unauthorized, or commercial purpose</li>
+                <li>Remove, alter, or obscure any proprietary notices on the App</li>
+                <li>Use the App in any way that could damage, disable, or impair the App or interfere with other users' access</li>
+            </ul>
         </section>
 
-        <section class="mb-6">
-            <h2 class="text-2xl font-semibold mb-3 text-sky-300">4. Liability Limitation</h2>
-            <p class="text-gray-300">The App is provided "as is." We do not guarantee the accuracy of the posture analysis or the suitability of the exercise recommendations. To the maximum extent permitted by law, we disclaim all liability for any damages or injuries related to your use of the App.</p>
+        <section>
+            <h2>4. Subscription and Payments</h2>
+            
+            <h3>4.1 Subscription Model</h3>
+            <p>PostureScan operates on a subscription-based model. Full access to the App's features requires an active subscription.</p>
+            
+            <h3>4.2 Free Onboarding</h3>
+            <p>You can download the App and experience the complete onboarding process for free before committing to a subscription.</p>
+            
+            <h3>4.3 Payment and Billing</h3>
+            <ul>
+                <li><strong>Payment Processing:</strong> All subscriptions are processed through Apple's App Store. Payment will be charged to your Apple ID account upon confirmation of purchase.</li>
+                <li><strong>Auto-Renewal:</strong> Subscriptions automatically renew unless canceled at least 24 hours before the end of the current subscription period.</li>
+                <li><strong>Pricing:</strong> Subscription prices are displayed in the App and may vary by region. Prices are subject to change with notice.</li>
+                <li><strong>Taxes:</strong> Prices do not include any applicable sales tax or VAT, which will be added as required by local law.</li>
+            </ul>
+
+            <h3>4.4 Managing Your Subscription</h3>
+            <p>You can view, change, or cancel your subscription at any time through your Apple ID account settings:</p>
+            <ul>
+                <li>Open Settings on your iOS device</li>
+                <li>Tap your name at the top</li>
+                <li>Tap "Subscriptions"</li>
+                <li>Select PostureScan</li>
+                <li>Choose "Cancel Subscription" or modify your plan</li>
+            </ul>
+
+            <h3>4.5 Cancellation and Refunds</h3>
+            <ul>
+                <li><strong>No Partial Refunds:</strong> If you cancel your subscription, you will continue to have access to paid features until the end of your current billing period. No partial refunds will be issued for unused time.</li>
+                <li><strong>Refund Requests:</strong> All refund requests must be made through Apple's App Store, as they process all payments. PostureScan does not have the ability to issue refunds directly.</li>
+                <li><strong>Apple Refund Policy:</strong> Refunds are subject to Apple's refund policy. You can request a refund through Apple within 14 days of purchase if you have not used the App extensively.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Your Responsibilities and Assumption of Risk</h2>
+            
+            <div class="info-box">
+                <p><strong>By using PostureScan, you explicitly acknowledge and agree to the following:</strong></p>
+            </div>
+
+            <ul>
+                <li><strong>Voluntary Participation:</strong> You are voluntarily choosing to use PostureScan and follow its exercise recommendations. You are under no obligation to perform any exercises suggested by the App.</li>
+                <li><strong>Physical Fitness:</strong> You represent that you are in adequate physical condition to perform physical exercises and have no medical conditions that would prevent you from engaging in posture correction activities.</li>
+                <li><strong>Medical Clearance:</strong> You agree to consult with a physician before beginning any exercise program, especially if you have any pre-existing medical conditions, injuries, or concerns.</li>
+                <li><strong>Stop If You Experience Pain:</strong> You agree to immediately stop any exercise if you experience pain, discomfort, dizziness, nausea, or any other adverse symptoms, and consult a healthcare provider.</li>
+                <li><strong>Your Own Judgment:</strong> You agree to use your own judgment when following the App's recommendations and to not exceed your physical limitations.</li>
+                <li><strong>Not a Diagnosis:</strong> You understand that the posture analysis and scores provided by the App are estimates and interpretations, not medical diagnoses.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Limitation of Liability and Disclaimer of Warranties</h2>
+            
+            <h3>6.1 "AS IS" Provision</h3>
+            <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.</p>
+            
+            <h3>6.2 No Guarantee of Accuracy</h3>
+            <p>PostureScan does not guarantee the accuracy, completeness, reliability, or suitability of the posture analysis, measurements, scores, or exercise recommendations provided by the App. Results may vary, and individual outcomes are not guaranteed.</p>
+            
+            <h3>6.3 No Liability for Injuries or Damages</h3>
+            <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, POSTURESCAN, ITS DEVELOPER (SAMUEL GILMORE), AND ITS AFFILIATES SHALL NOT BE LIABLE FOR ANY INJURIES, DAMAGES, LOSSES, OR CLAIMS (INCLUDING BUT NOT LIMITED TO DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR PUNITIVE DAMAGES) ARISING FROM OR RELATED TO:</strong></p>
+            <ul>
+                <li>Your use of or inability to use the App</li>
+                <li>Any exercise recommendations or routines suggested by the App</li>
+                <li>Any injuries, pain, discomfort, or adverse health outcomes resulting from using the App or following its recommendations</li>
+                <li>The accuracy or inaccuracy of posture analysis, measurements, or scores</li>
+                <li>Any technical errors, bugs, or malfunctions in the App</li>
+                <li>Any interruption or cessation of the App's services</li>
+                <li>Any unauthorized access to or alteration of your data</li>
+            </ul>
+
+            <h3>6.4 Indemnification</h3>
+            <p>You agree to indemnify, defend, and hold harmless PostureScan, Samuel Gilmore, and their affiliates from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from your use of the App, your violation of these Terms, or your violation of any rights of another party.</p>
+        </section>
+
+        <section>
+            <h2>7. Intellectual Property Rights</h2>
+            <ul>
+                <li><strong>Ownership:</strong> All content, features, functionality, designs, graphics, logos, text, and software in the App are the exclusive property of PostureScan and Samuel Gilmore and are protected by copyright, trademark, and other intellectual property laws.</li>
+                <li><strong>Your Content:</strong> You retain ownership of any images, data, or content you create using the App. By using the App, you grant PostureScan a limited license to process your images solely for the purpose of providing posture analysis services.</li>
+                <li><strong>Trademarks:</strong> "PostureScan" and associated logos are trademarks of Samuel Gilmore. You may not use these trademarks without prior written permission.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>8. Privacy and Data Usage</h2>
+            <p>Your privacy is important to us. Our collection, use, and protection of your personal information is governed by our <a href="/privacy/" style="color: var(--accent-end); text-decoration: none; font-weight: 600;">Privacy Policy</a>, which is incorporated into these Terms by reference. By using the App, you consent to the practices described in the Privacy Policy.</p>
+            
+            <div class="info-box">
+                <p><strong>Key Privacy Points:</strong> All your scan data is stored on YOUR device via iCloud/CloudKit. We do not store your images on our servers. Images are temporarily processed by OpenAI's API with logging disabled, meaning no data is retained after analysis.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>9. User Conduct and Prohibited Activities</h2>
+            <p>You agree NOT to:</p>
+            <ul>
+                <li>Use the App for any unlawful purpose or in violation of these Terms</li>
+                <li>Attempt to gain unauthorized access to the App or its related systems</li>
+                <li>Interfere with or disrupt the App's operation or servers</li>
+                <li>Upload any content that contains viruses, malware, or harmful code</li>
+                <li>Impersonate any person or entity or falsely state or misrepresent your affiliation with any person or entity</li>
+                <li>Harvest or collect information about other users without their consent</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>10. Modifications to the App and Terms</h2>
+            <ul>
+                <li><strong>App Updates:</strong> We reserve the right to modify, update, or discontinue the App or any features at any time without notice.</li>
+                <li><strong>Terms Updates:</strong> We may revise these Terms from time to time. The "Last Updated" date at the top will reflect when changes were made. Continued use of the App after changes constitutes acceptance of the revised Terms.</li>
+                <li><strong>Notification:</strong> For material changes, we will make reasonable efforts to notify you through the App or via email.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>11. Termination</h2>
+            <ul>
+                <li><strong>Your Right to Terminate:</strong> You may stop using the App at any time and cancel your subscription through your Apple ID settings.</li>
+                <li><strong>Our Right to Terminate:</strong> We reserve the right to suspend or terminate your access to the App at any time, with or without notice, if we believe you have violated these Terms or engaged in fraudulent, abusive, or illegal activity.</li>
+                <li><strong>Effect of Termination:</strong> Upon termination, your license to use the App will immediately cease. Provisions of these Terms that by their nature should survive termination (including limitation of liability, indemnification, and dispute resolution) will continue to apply.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>12. Governing Law and Dispute Resolution</h2>
+            <ul>
+                <li><strong>Governing Law:</strong> These Terms shall be governed by and construed in accordance with the laws of the United States and the State of California, without regard to conflict of law principles.</li>
+                <li><strong>Dispute Resolution:</strong> Any disputes arising from these Terms or your use of the App shall be resolved through binding arbitration in accordance with the rules of the American Arbitration Association, except where prohibited by law.</li>
+                <li><strong>Class Action Waiver:</strong> You agree that any arbitration or proceeding shall be limited to the dispute between you and PostureScan individually. You waive the right to participate in a class action lawsuit or class-wide arbitration.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>13. Miscellaneous</h2>
+            <ul>
+                <li><strong>Entire Agreement:</strong> These Terms, together with the Privacy Policy, constitute the entire agreement between you and PostureScan regarding the App.</li>
+                <li><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable or invalid, the remaining provisions shall continue in full force and effect.</li>
+                <li><strong>No Waiver:</strong> Our failure to enforce any provision of these Terms shall not be deemed a waiver of that provision.</li>
+                <li><strong>Assignment:</strong> You may not assign or transfer these Terms or your rights under these Terms without our prior written consent. We may assign these Terms without restriction.</li>
+            </ul>
         </section>
         
-        <footer class="mt-8 pt-4 border-t border-gray-700 text-center text-sm space-x-4">
-            <a href="privacy.html" class="nav-link">Privacy Policy</a>
-            <span>|</span>
-            <a href="support.html" class="nav-link">Support Page</a>
+        <div class="contact-box">
+            <p><strong>Questions About These Terms?</strong></p>
+            <p>If you have any questions or concerns about these Terms of Service, please contact us:</p>
+            <a href="mailto:support@posturescan.app" class="email-link">support@posturescan.app</a>
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/">← Back to Home</a>
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/support/">Support</a>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 14px; margin-top: 2rem;">© 2026 PostureScan. All rights reserved.</p>
         </footer>
     </div>
 </body>

@@ -1,1 +1,0 @@
-# posturescanner-legal

@@ -1,111 +1,475 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Support - Posture Scanner</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <title>Support - PostureScan</title>
+    <meta name="description" content="PostureScan Support - Get help with technical issues, billing, and common questions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        body { font-family: 'Inter', sans-serif; background-color: #0A0E1A; color: #F5F5F5; }
+        :root {
+            --primary-bg: #0A0E1A;
+            --secondary-bg: #131824;
+            --accent-start: #3B82F6;
+            --accent-end: #60A5FA;
+            --text-primary: #F5F5F5;
+            --text-secondary: #94A3B8;
+            --success-green: #10B981;
+            --warning-orange: #F59E0B;
+        }
 
-        .container { max-width: 800px; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.8;
+            padding: 2rem 1rem;
+        }
 
-        .nav-link { color: #0EA5E9; text-decoration: none; font-weight: 600; }
+        .brand-font {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+        }
 
-        .nav-link:hover { color: #06B6D4; }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--secondary-bg);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 0.6s ease-out;
+        }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .logo-link img {
+            width: 40px;
+            height: 40px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-end) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--accent-end);
+            margin: 2.5rem 0 1.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .contact-box {
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid var(--accent-start);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .contact-box p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .email-link {
+            display: inline-block;
+            color: var(--accent-end);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 0.75rem 1.5rem;
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .email-link:hover {
+            background: rgba(59, 130, 246, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .response-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 14px;
+            color: var(--success-green);
+            font-weight: 600;
+        }
+
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        .faq-item {
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(59, 130, 246, 0.08);
+            border-color: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+
+        .faq-question::before {
+            content: 'Q:';
+            color: var(--accent-end);
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 15px;
+            padding-left: 32px;
+        }
+
+        .faq-answer strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .faq-answer ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .highlight-box {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning-orange);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(59, 130, 246, 0.2);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--accent-end);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-start);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .faq-item {
+                padding: 1.5rem;
+            }
+
+            .faq-question {
+                font-size: 16px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
     </style>
-
 </head>
-
-<body class="p-4 sm:p-8">
-
-    <div class="container mx-auto bg-gray-900 p-6 sm:p-10 rounded-xl shadow-2xl">
-
-        
-
-        <header class="mb-8 border-b border-gray-700 pb-4">
-
-            <h1 class="3xl font-bold text-sky-400">Posture Scanner Support</h1>
-
-            <p class="text-sm text-gray-400 mt-1">We're here to help you with technical issues and billing inquiries.</p>
-
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="logo-link">
+                <img src="../assets/app_icon_inner_new.png" alt="PostureScan Icon">
+                <span class="brand-font" style="font-size: 24px;">PostureScan</span>
+            </a>
+            <h1>Support Center</h1>
+            <p class="subtitle">We're here to help you stand tall and succeed on your posture journey.</p>
         </header>
 
+        <section>
+            <h2>Contact Us</h2>
+            <p>Have a question, technical issue, or need help with your account? We're here to help! Our support team is committed to providing fast, friendly assistance.</p>
+            
+            <div class="contact-box">
+                <p><strong>Email Support</strong></p>
+                <a href="mailto:support@posturescan.app" class="email-link">support@posturescan.app</a>
+                <div class="response-time">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm0 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm.5 2v4.5l3.5 2-.5.9L7 8.5V3.5h1.5z"/>
+                    </svg>
+                    Response within 24-48 hours
+                </div>
+            </div>
 
+            <p style="text-align: center;">When contacting us, please include:</p>
+            <ul style="list-style: none; text-align: center; color: var(--text-secondary); font-size: 14px;">
+                <li>• Your device model and iOS version</li>
+                <li>• A detailed description of the issue</li>
+                <li>• Screenshots (if applicable)</li>
+            </ul>
+        </section>
 
-        <section class="mb-6">
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
 
-            <h2 class="2xl font-semibold mb-3 text-sky-300">Contact Information</h2>
+            <div class="faq-item">
+                <div class="faq-question">How do I request a refund for my subscription?</div>
+                <div class="faq-answer">
+                    <p>All PostureScan subscriptions are processed through Apple's App Store, so refund requests must be submitted directly to Apple. Here's how to request a refund:</p>
+                    
+                    <p><strong>Method 1: Via reportaproblem.apple.com</strong></p>
+                    <ol>
+                        <li>Visit <a href="https://reportaproblem.apple.com" style="color: var(--accent-end); text-decoration: none; font-weight: 600;">reportaproblem.apple.com</a></li>
+                        <li>Sign in with your Apple ID</li>
+                        <li>Find your PostureScan subscription purchase</li>
+                        <li>Click "Report a Problem" next to the charge</li>
+                        <li>Select your reason and submit the request</li>
+                    </ol>
 
-            <p class="text-gray-300">For all support, technical, or account questions, please contact us directly via email. We aim to respond within 48 hours.</p>
+                    <p><strong>Method 2: Through the App Store app</strong></p>
+                    <ol>
+                        <li>Open the App Store on your iPhone</li>
+                        <li>Tap your profile icon at the top right</li>
+                        <li>Tap "Purchase History"</li>
+                        <li>Find your PostureScan subscription</li>
+                        <li>Tap "Report a Problem" and follow the prompts</li>
+                    </ol>
 
-            <div class="mt-4 p-4 bg-gray-800 rounded-lg">
+                    <div class="highlight-box">
+                        <p><strong>Note:</strong> Apple typically grants refunds for purchases made within the last 14 days if the app was not extensively used. Refund approval is at Apple's discretion and subject to their refund policy.</p>
+                    </div>
 
-                <p class="text-lg font-mono text-cyan-400">posturescanapp@gmail.com</p>
+                    <p>If you experience any issues with this process, please contact us at support@posturescan.app and we'll do our best to assist you.</p>
+                </div>
+            </div>
 
+            <div class="faq-item">
+                <div class="faq-question">How do I cancel my subscription?</div>
+                <div class="faq-answer">
+                    <p>You can cancel your PostureScan subscription at any time through your Apple ID settings:</p>
+                    <ol>
+                        <li>Open <strong>Settings</strong> on your iPhone or iPad</li>
+                        <li>Tap your name at the top</li>
+                        <li>Tap <strong>Subscriptions</strong></li>
+                        <li>Select <strong>PostureScan</strong></li>
+                        <li>Tap <strong>Cancel Subscription</strong></li>
+                    </ol>
+                    <p><strong>Important:</strong> When you cancel, you'll continue to have access to premium features until the end of your current billing period. No partial refunds are issued for unused time.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Where is my data stored? Is it private?</div>
+                <div class="faq-answer">
+                    <p><strong>Yes, your data is completely private!</strong> All your scan images, posture measurements, exercise history, and progress data are stored securely on <strong>your personal iCloud/CloudKit storage</strong>.</p>
+                    <p>PostureScan does NOT store any of your personal data on our remote servers. We cannot access your scan images or posture data.</p>
+                    <p>During scanning, images are temporarily sent to OpenAI's API for AI analysis, but OpenAI has logging disabled and does not retain any data after processing. For more details, see our <a href="/privacy/" style="color: var(--accent-end); text-decoration: none; font-weight: 600;">Privacy Policy</a>.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">My scan results seem inaccurate. What should I do?</div>
+                <div class="faq-answer">
+                    <p>For the most accurate posture analysis, please ensure:</p>
+                    <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>You're standing <strong>6-10 feet away</strong> from the camera</li>
+                        <li>You're wearing <strong>form-fitting clothing</strong> (not baggy clothes)</li>
+                        <li>The room has <strong>good lighting</strong> with no shadows on your body</li>
+                        <li>Your <strong>full body is visible</strong> in the camera frame</li>
+                        <li>You're standing in a <strong>natural, relaxed posture</strong></li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p><strong>Remember:</strong> PostureScan provides guidance and suggestions, not medical diagnoses. If you have concerns about your posture or experience pain, please consult a qualified healthcare provider.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">The app isn't working properly / I found a bug. What should I do?</div>
+                <div class="faq-answer">
+                    <p>We're sorry you're experiencing technical issues! Please try these troubleshooting steps first:</p>
+                    <ol>
+                        <li><strong>Restart the app:</strong> Fully close PostureScan and reopen it</li>
+                        <li><strong>Update the app:</strong> Check the App Store for the latest version</li>
+                        <li><strong>Restart your device:</strong> Sometimes a simple restart fixes issues</li>
+                        <li><strong>Check your internet connection:</strong> Posture analysis requires a stable connection</li>
+                        <li><strong>Ensure iCloud is enabled:</strong> Go to Settings > [Your Name] > iCloud and make sure iCloud Drive is on</li>
+                    </ol>
+                    <p>If the issue persists, please email us at <a href="mailto:support@posturescan.app" style="color: var(--accent-end); text-decoration: none; font-weight: 600;">support@posturescan.app</a> with details about the problem, your device model, and iOS version. Screenshots are helpful!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I use PostureScan on multiple devices?</div>
+                <div class="faq-answer">
+                    <p><strong>Yes!</strong> Your subscription is tied to your Apple ID, so you can use PostureScan on any iOS device signed in with the same Apple ID.</p>
+                    <p>Your data will automatically sync across devices via iCloud/CloudKit, so your scans, progress, and exercise history will be available everywhere.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How often should I scan my posture?</div>
+                <div class="faq-answer">
+                    <p>We recommend scanning your posture <strong>daily</strong> to track your progress and stay motivated! PostureScan is designed for daily use alongside your personalized exercise routines.</p>
+                    <p>Daily scans help you:</p>
+                    <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Monitor small improvements over time</li>
+                        <li>Stay accountable to your posture goals</li>
+                        <li>Identify which exercises are working best for you</li>
+                        <li>Build a consistent wellness habit</li>
+                    </ul>
+                    <p>Consistency is key! Focus on your daily exercise routines and watch your posture improve day by day.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is PostureScan a medical device?</div>
+                <div class="faq-answer">
+                    <p><strong>No.</strong> PostureScan is a wellness and fitness tool designed for self-improvement and educational purposes. It is <strong>NOT a medical device</strong> and does not provide medical advice, diagnosis, or treatment.</p>
+                    <p>The posture analysis and exercise recommendations are for informational purposes only. If you have medical concerns, chronic pain, or pre-existing conditions, please consult a qualified healthcare provider before using the app or following any exercise recommendations.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I delete my account and data?</div>
+                <div class="faq-answer">
+                    <p>Yes! To delete your account and all associated data:</p>
+                    <ol>
+                        <li>First, cancel your subscription (see above)</li>
+                        <li>Delete the PostureScan app from your device</li>
+                        <li>Go to <strong>Settings > [Your Name] > iCloud > Manage Storage > PostureScan</strong> and delete the data</li>
+                    </ol>
+                    <p>Alternatively, you can email us at <a href="mailto:support@posturescan.app" style="color: var(--accent-end); text-decoration: none; font-weight: 600;">support@posturescan.app</a> to request account deletion, and we'll assist you with the process.</p>
+                </div>
             </div>
 
         </section>
 
-
-
-        <section class="mb-6">
-
-            <h2 class="2xl font-semibold mb-3 text-sky-300">Frequently Asked Questions</h2>
-
-            <div class="space-y-4 text-gray-300">
-
-                <div class="border-b border-gray-700 pb-3">
-
-                    <h3 class="font-semibold text-white">Q: How do I cancel my subscription?</h3>
-
-                    <p class="text-sm mt-1">A: Subscriptions are managed directly through your Apple ID settings. Go to Settings > [Your Name] > Subscriptions and select Posture Scanner to manage or cancel your plan.</p>
-
-                </div>
-
-                <div class="border-b border-gray-700 pb-3">
-
-                    <h3 class="font-semibold text-white">Q: Where is my data stored?</h3>
-
-                    <p class="text-sm mt-1">A: All your scan data, images, and progress records are stored securely on your personal <strong>iCloud/CloudKit</strong>. We do not store this information remotely on our servers.</p>
-
-                </div>
-
-                <div class="border-b border-gray-700 pb-3">
-
-                    <h3 class="font-semibold text-white">Q: My scan results seem wrong. What should I do?</h3>
-
-                    <p class="text-sm mt-1">A: Ensure you are standing the required distance from the camera (typically 6-10 feet) and that you are wearing close-fitting clothing. Remember, our analysis provides suggestions and is not a medical diagnosis. If you are experiencing pain, please consult a medical professional.</p>
-
-                </div>
-
-            </div>
-
+        <section style="margin-top: 4rem; text-align: center;">
+            <h2>Still Have Questions?</h2>
+            <p>If you didn't find the answer you're looking for, we're here to help!</p>
+            <a href="mailto:support@posturescan.app" class="email-link" style="margin-top: 1rem;">Contact Support</a>
         </section>
 
-
-
-        <footer class="mt-8 pt-4 border-t border-gray-700 text-center text-sm space-x-4">
-
-            <a href="privacy.html" class="nav-link">Privacy Policy</a>
-
-            <span>|</span>
-
-            <a href="terms.html" class="nav-link">Terms of Service</a>
-
+        <footer>
+            <div class="footer-links">
+                <a href="/">← Back to Home</a>
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/terms/">Terms of Service</a>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 14px; margin-top: 2rem;">© 2026 PostureScan. All rights reserved.</p>
         </footer>
-
     </div>
-
 </body>
-
 </html>
