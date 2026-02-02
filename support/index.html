@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - PostureScan</title>
     <meta name="description" content="PostureScan Support - Get help with technical issues, billing, and common questions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/app_icon_semi_transparent.png">
+    <link rel="apple-touch-icon" href="../assets/app_icon_semi_transparent.png">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://posturescan.app/support/">
+    <meta property="og:title" content="Support - PostureScan">
+    <meta property="og:description" content="PostureScan Support - Get help with technical issues, billing, and common questions.">
+    <meta property="og:image" content="https://posturescan.app/assets/app_icon_semi_transparent.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Support - PostureScan">
+    <meta name="twitter:description" content="PostureScan Support - Get help with technical issues, billing, and common questions.">
+    <meta name="twitter:image" content="https://posturescan.app/assets/app_icon_semi_transparent.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
@@ -147,16 +165,18 @@
         }
 
         .response-time {
-            display: inline-flex;
+            display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             background: rgba(16, 185, 129, 0.1);
             padding: 0.5rem 1rem;
             border-radius: 8px;
-            margin-top: 1rem;
+            margin: 1rem auto 0;
             font-size: 14px;
             color: var(--success-green);
             font-weight: 600;
+            max-width: fit-content;
         }
 
         .faq-section {
